@@ -1,4 +1,4 @@
-package com.haslearntit;
+package it.haslearnt;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

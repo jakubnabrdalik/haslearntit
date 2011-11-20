@@ -1,4 +1,4 @@
-package org.apache.cassandra.contrib.utils.service;
+package setup;
 
 import org.apache.cassandra.config.DatabaseDescriptor;
 import org.apache.cassandra.io.util.FileUtils;
@@ -9,12 +9,11 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-public class CassandraServiceDataCleaner {
-    public void prepare() throws IOException {
+class CassandraDataCleaner {
+    public void clean() throws IOException {
         makeDirsIfNotExist();
         cleanupDataDirectories();
     }
-
 
     public void cleanupDataDirectories() throws IOException {
         for (String s : getDataDirs()) {
@@ -22,13 +21,11 @@ public class CassandraServiceDataCleaner {
         }
     }
 
-
     public void makeDirsIfNotExist() throws IOException {
         for (String s : getDataDirs()) {
             mkdir(s);
         }
     }
-
 
     private Set<String> getDataDirs() {
         Set<String> dirs = new HashSet<String>();
@@ -37,11 +34,9 @@ public class CassandraServiceDataCleaner {
         return dirs;
     }
 
-
     private void mkdir(String dir) throws IOException {
         FileUtils.createDirectory(dir);
     }
-
 
     private void cleanDir(String dir) throws IOException {
         File dirFile = new File(dir);

@@ -6,7 +6,7 @@
            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
-    <ctx:component-scan base-package="com.haslearntit" annotation-config="true"/>
+    <ctx:component-scan base-package="it.haslearnt" annotation-config="true"/>
 
     <util:properties id="cassandraProperties" location="classpath:cassandra.properties" />
 
@@ -15,7 +15,7 @@
         <constructor-arg name="thriftPort" value="#{cassandraProperties['connection.port']}"/>
     </bean>
 
-    <bean id="pelopsPool" class="com.haslearntit.CassandraConnectionProvider">
+    <bean id="pelopsPool" class="it.haslearnt.CassandraConnectionProvider">
         <property name="cluster" ref="cassandraCluster"/>
         <property name="keyspace" value="#{cassandraProperties['keyspace']}"/>
         <property name="clean" value="true"/>

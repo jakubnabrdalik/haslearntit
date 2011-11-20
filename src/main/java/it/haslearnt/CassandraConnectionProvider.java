@@ -1,4 +1,4 @@
-package com.haslearntit;
+package it.haslearnt;
 
 import org.scale7.cassandra.pelops.spring.CommonsBackedPoolFactoryBean;
 
@@ -10,7 +10,6 @@ public class CassandraConnectionProvider extends CommonsBackedPoolFactoryBean {
     public void afterPropertiesSet() throws Exception {
         CassandraUtils.ensureKeyspace(getCluster(), getKeyspace());
         CassandraUtils.ensureColumnFamily(getCluster(), getKeyspace(), "Notes", "LongType", clean);
-
         super.afterPropertiesSet();
     }
 

@@ -1,4 +1,4 @@
-package com.haslearntit.controller;
+package it.haslearnt.controller;
 
 import org.apache.cassandra.thrift.ConsistencyLevel;
 import org.scale7.cassandra.pelops.Bytes;
