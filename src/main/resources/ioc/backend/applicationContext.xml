@@ -15,7 +15,7 @@
         <constructor-arg name="thriftPort" value="#{cassandraProperties['connection.port']}"/>
     </bean>
 
-    <bean id="pelopsPool" class="it.haslearnt.CassandraConnectionProvider">
+    <bean id="pelopsPool" class="it.haslearnt.cassandra.CassandraConnectionProvider">
         <property name="cluster" ref="cassandraCluster"/>
         <property name="keyspace" value="#{cassandraProperties['keyspace']}"/>
         <property name="clean" value="true"/>

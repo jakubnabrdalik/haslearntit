@@ -5,7 +5,7 @@
 
 package setup;
 
-import it.haslearnt.CassandraUtils;
+import it.haslearnt.cassandra.CassandraColumnFamilyManager;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.runner.RunWith;
@@ -16,7 +16,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:/embeddedCassandra.xml", "classpath:/ioc/backend/applicationContext.xml"})
+@ContextConfiguration(locations = {"classpath:/ioc/embeddedCassandra.xml", "classpath:/ioc/backend/applicationContext.xml"})
 @Ignore
 public abstract class IntegrationTest {
 
@@ -28,7 +28,7 @@ public abstract class IntegrationTest {
 
     @Before
     public void cleanUp() throws Exception {
-        CassandraUtils.cleanColumnFamilies(cluster, pool.getKeyspace());
+        CassandraColumnFamilyManager.cleanColumnFamilies(cluster, pool.getKeyspace());
     }
 
 }
