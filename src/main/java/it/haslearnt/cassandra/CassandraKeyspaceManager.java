@@ -1,6 +1,6 @@
 /*
- * Copyright (c) (2005 - 2011) TouK sp. z o.o. s.k.a.
- * All rights reserved
+ * Copyright: this code is distributed under WTFPL version2
+ * In short: You just DO WHAT THE FUCK YOU WANT TO.
  */
 
 package it.haslearnt.cassandra;
